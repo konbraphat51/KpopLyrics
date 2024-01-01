@@ -6,18 +6,50 @@
 export default {
 	name: "TfidfViwer",
 	props: {
-		dataframe: Object,
+		dataframe: Array,
 	},
 	data() {
 		return {
 			tableID: MakeID(6),
+			table: null,
 		}
+	},
+	mounted() {
+		this.MakeTable()
 	},
 	computed: {
 		dataThis() {
-			if (this.dataframe == undefined) return {}
+			if (this.dataframe == undefined) return []
 
-			return this.dataframe
+			let output = []
+
+			this.dataframe.forEach((element) => {
+				output.push({
+					word: element[0],
+					count: element[1],
+				})
+			})
+
+			return output
+		},
+	},
+	methods: {
+		MakeTable() {
+			this.table = new Tabulator("#" + this.tableID, {
+				data: this.dataThis,
+				layout: "fitColumns",
+				pagination: "local",
+				paginationSize: 10,
+				columns: [
+					{title: "word", field: "word"},
+					{title: "count", field: "count"},
+				],
+			})
+		},
+	},
+	watch: {
+		dataframe() {
+			this.MakeTable()
 		},
 	},
 }
