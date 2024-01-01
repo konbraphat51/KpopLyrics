@@ -2,6 +2,13 @@
 	<div id="app">
 		<Header />
 		<DataDescription :data="data" :playlists="playlists" :groups="groups" />
+		<h2>IndividualAnalysis</h2>
+		<IndividualAnalysis
+			v-for="group in groups"
+			:key="group"
+			:target="group"
+			:data="data"
+		/>
 		<Footer />
 	</div>
 </template>
@@ -18,6 +25,9 @@ export default Vue.defineComponent({
 		),
 		DataDescription: Vue.defineAsyncComponent(() =>
 			loadModule("src/components/DataDescription.vue", options),
+		),
+		IndividualAnalysis: Vue.defineAsyncComponent(() =>
+			loadModule("src/components/IndividualAnalysis.vue", options),
 		),
 	},
 	data() {
