@@ -1,11 +1,17 @@
 <template>
-  <div id="app"></div>
+  <div id="app">
+    <Footer />
+  </div>
 </template>
 
 <script>
 export default Vue.defineComponent({
   name: "App",
-  components: {},
+  components: {
+    Footer: Vue.defineAsyncComponent(() =>
+      loadModule("src/components/Footer.vue", options)
+    ),
+  },
   setup() {
     //set up i18n
     const { t } = VueI18n.useI18n();
