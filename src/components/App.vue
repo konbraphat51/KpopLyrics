@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <Header />
     <Footer />
   </div>
 </template>
@@ -8,6 +9,9 @@
 export default Vue.defineComponent({
   name: "App",
   components: {
+    Header: Vue.defineAsyncComponent(() =>
+      loadModule("src/components/Header.vue", options)
+    ),
     Footer: Vue.defineAsyncComponent(() =>
       loadModule("src/components/Footer.vue", options)
     ),
