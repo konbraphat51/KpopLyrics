@@ -18,7 +18,8 @@ export default Vue.defineComponent({
 	},
 	data() {
 		return {
-			data: [],
+			data: {},
+			playlists: [],
 		}
 	},
 	mounted() {
@@ -30,6 +31,12 @@ export default Vue.defineComponent({
 				.then((res) => res.json())
 				.then((res) => {
 					this.data = res
+				})
+
+			fetch("/src/data/playlists.csv")
+				.then((res) => res.text())
+				.then((res) => {
+					this.playlists = res.split("\n").map((row) => row.split(","))
 				})
 		},
 	},
