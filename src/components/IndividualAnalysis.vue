@@ -5,8 +5,16 @@
 			<summary>TFIDF (keywords)</summary>
 
 			<h4>Against global population</h4>
-			<h5>Count</h5>
-			<TfidfViewer :dataframe="dataThis['tfidf_counter_global']" />
+
+			<details>
+				<summary>Counting</summary>
+				<TfidfViewer :dataframe="dataThis['tfidf_counter_global']" />
+			</details>
+
+			<details>
+				<summary>sum</summary>
+				<TfidfViewer :dataframe="dataThis['tfidf_summer_global']" />
+			</details>
 		</details>
 	</div>
 </template>
