@@ -28,6 +28,17 @@
 				<TfidfViewer :dataframe="dataThis['tfidf_summer_kpop']" />
 			</details>
 		</details>
+
+		<details>
+			<summary>LDA (topic)</summary>
+
+			<h4>Against global population</h4>
+
+			<details>
+				<summary>topics</summary>
+				<LdaTopicViewer :htmlText="dataThis['lda_html_global']" />
+			</details>
+		</details>
 	</div>
 </template>
 
@@ -41,6 +52,9 @@ export default {
 	components: {
 		TfidfViewer: Vue.defineAsyncComponent(() =>
 			loadModule("src/components/TfidfViewer.vue", options),
+		),
+		LdaTopicViewer: Vue.defineAsyncComponent(() =>
+			loadModule("src/components/LdaTopicViewer.vue", options),
 		),
 	},
 	computed: {
