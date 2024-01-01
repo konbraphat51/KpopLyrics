@@ -1,6 +1,7 @@
 <template>
 	<div id="app">
 		<Header />
+		<DataDescription :data="data" :playlists="playlists" :groups="groups" />
 		<Footer />
 	</div>
 </template>
@@ -15,11 +16,15 @@ export default Vue.defineComponent({
 		Footer: Vue.defineAsyncComponent(() =>
 			loadModule("src/components/Footer.vue", options),
 		),
+		DataDescription: Vue.defineAsyncComponent(() =>
+			loadModule("src/components/DataDescription.vue", options),
+		),
 	},
 	data() {
 		return {
-			data: {},
-			playlists: [],
+			data: undefined,
+			playlists: undefined,
+			groups: ["kpop", "bts", "seventeen", "twice", "itzy"],
 		}
 	},
 	mounted() {
