@@ -4,17 +4,9 @@
 		<details>
 			<summary>TFIDF (keywords)</summary>
 
-			<details>
-				<summary>What is TFIDF?</summary>
-				<p>
-					TFIDF indicates how important a word is to a document in a corpus.<br />
-					<a
-						href="https://medium.com/nlplanet/two-minutes-nlp-learn-tf-idf-with-easy-examples-7c15957b4cb3"
-					>
-						More information
-					</a>
-				</p>
-			</details>
+			<h4>Against global population</h4>
+			<h5>Count</h5>
+			<TfidfViewer :dataframe="dataThis['tfidf_counter_global']" />
 		</details>
 	</div>
 </template>
@@ -25,6 +17,18 @@ export default {
 	props: {
 		target: String,
 		data: Object,
+	},
+	components: {
+		TfidfViewer: Vue.defineAsyncComponent(() =>
+			loadModule("src/components/TfidfViewer.vue", options),
+		),
+	},
+	computed: {
+		dataThis() {
+			if (this.data == undefined) return {}
+
+			return this.data["data_" + this.target]
+		},
 	},
 }
 </script>
