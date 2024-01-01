@@ -8,8 +8,12 @@
 				<th>group</th>
 				<th>number of musics</th>
 			</tr>
+			<tr>
+				<td>total</td>
+				<td>{{ totalMusic }}</td>
+			</tr>
 			<tr v-for="group in groups" :key="group">
-				<td>{{ group }}</td>
+				<td>{{ group == "kpop" ? "kpop(total)" : group }}</td>
 				<td>{{ GetMusicCount(group) }}</td>
 			</tr>
 		</table>
