@@ -15,6 +15,18 @@
 				<summary>sum</summary>
 				<TfidfViewer :dataframe="dataThis['tfidf_summer_global']" />
 			</details>
+
+			<h4>Against KPOP population</h4>
+
+			<details>
+				<summary>Counting</summary>
+				<TfidfViewer :dataframe="dataThis['tfidf_counter_kpop']" />
+			</details>
+
+			<details>
+				<summary>sum</summary>
+				<TfidfViewer :dataframe="dataThis['tfidf_summer_kpop']" />
+			</details>
 		</details>
 	</div>
 </template>
