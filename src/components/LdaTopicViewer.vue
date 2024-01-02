@@ -1,5 +1,5 @@
 <template>
-	<div v-html="htmlText"></div>
+	<div :id="componentID" v-html="htmlText"></div>
 </template>
 
 <script>
@@ -8,8 +8,21 @@ export default {
 	props: {
 		htmlText: String,
 	},
-	watch: {
-		htmlText() {},
+	data() {
+		return {
+			componentID: MakeID(6)
+		}
 	},
+	methods: {
+		RunScript(){
+			const component = document.getElementByID(this.componentID)
+			const scripts = component.getElementsByTagName("script")
+			for (let i = 0; i < scripts.length; i++) {
+    const script = document.createElement('script');
+    script.textContent = scripts[i].textContent;
+    document.body.appendChild(script);
+  }
+}
+		}
 }
 </script>
