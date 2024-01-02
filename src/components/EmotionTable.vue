@@ -1,0 +1,47 @@
+<template>
+	<table>
+		<tr>
+			<td>Emotion</td>
+			<td>Score</td>
+		</tr>
+		<tr v-for="emotion in emotionList" :key="emotion">
+			<td>{{ emotion }}</td>
+			<td>{{ dataThis[emotion] }}</td>
+		</tr>
+	</table>
+</template>
+
+<script>
+export default {
+	name: "EmotionTable",
+	props: {
+		vector: Array,
+	},
+	data() {
+		return {
+			emotionList: [
+				"anger",
+				"anticipation",
+				"disgust",
+				"fear",
+				"joy",
+				"sadness",
+				"surprise",
+				"trust",
+			],
+		}
+	},
+	computed: {
+		dataThis() {
+			if (this.vector == undefined) return []
+
+			let output = {}
+			for (let i = 0; i < this.emotionList.length; i++) {
+				output[this.emotionList[i]] = this.vector[i]
+			}
+
+			return output
+		},
+	},
+}
+</script>

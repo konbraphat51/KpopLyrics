@@ -66,6 +66,19 @@
 				<LdaViewer :dataframe="dataThis['lda_summer_kpop']" />
 			</details>
 		</details>
+
+		<details>
+			<summary>NRC Emotion Score</summary>
+
+			<h5>Noramlized mean emotion score</h5>
+			<EmotionTable :vector="dataThis['normalized_mean_emotion_target']" />
+
+			<h5>Ratio against global population (%)</h5>
+			<EmotionTable :vector="dataThis['emotion_percentage_global']" />
+
+			<h5>Ratio against KPOP population (%)</h5>
+			<EmotionTable :vector="dataThis['emotion_percentage_kpop']" />
+		</details>
 	</div>
 </template>
 
@@ -85,6 +98,9 @@ export default {
 		),
 		LdaViewer: Vue.defineAsyncComponent(() =>
 			loadModule("src/components/LdaViewer.vue", options),
+		),
+		EmotionTable: Vue.defineAsyncComponent(() =>
+			loadModule("src/components/EmotionTable.vue", options),
 		),
 	},
 	computed: {
