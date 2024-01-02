@@ -37,7 +37,8 @@ export default {
 
 			let output = {}
 			for (let i = 0; i < this.emotionList.length; i++) {
-				output[this.emotionList[i]] = this.vector[i]
+				let rounded = this.vector[i].toFixed(3)
+				output[this.emotionList[i]] = rounded
 			}
 
 			return output
