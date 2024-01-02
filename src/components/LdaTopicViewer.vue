@@ -22,6 +22,7 @@ export default {
     script.textContent = scripts[i].textContent;
     document.body.appendChild(script);
   }
+			alert("1")
 }
 		}
 }
