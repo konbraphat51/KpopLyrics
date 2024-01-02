@@ -1,6 +1,7 @@
 <template>
 	<div id="app">
 		<Header />
+		<div id="loading" v-if="!(loadedData && loadedPlaylists)">Loading...</div>
 		<MethodsDescription />
 		<DataDescription :data="data" :playlists="playlists" :groups="groups" />
 		<h2>IndividualAnalysis</h2>
@@ -39,6 +40,8 @@ export default Vue.defineComponent({
 			data: undefined,
 			playlists: undefined,
 			groups: ["kpop", "bts", "seventeen", "twice", "itzy"],
+			loadedData: false,
+			loadedPlaylists: false,
 		}
 	},
 	mounted() {
@@ -50,14 +53,31 @@ export default Vue.defineComponent({
 				.then((res) => res.json())
 				.then((res) => {
 					this.data = res
+					this.loadedData = true
 				})
 
 			fetch("src/data/playlists.csv")
 				.then((res) => res.text())
 				.then((res) => {
 					this.playlists = res.split("\n").map((row) => row.split(","))
+					this.loadedPlaylists = true
 				})
 		},
 	},
 })
 </script>
+
+<style>
+#loading {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgb(255, 200, 200);
+	z-index: 100;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+</style>
