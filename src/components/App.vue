@@ -46,13 +46,13 @@ export default Vue.defineComponent({
 	},
 	methods: {
 		ImportData() {
-			fetch("./src/data/data.json")
+			fetch("src/data/data.json")
 				.then((res) => res.json())
 				.then((res) => {
 					this.data = res
 				})
 
-			fetch("./src/data/playlists.csv")
+			fetch("src/data/playlists.csv")
 				.then((res) => res.text())
 				.then((res) => {
 					this.playlists = res.split("\n").map((row) => row.split(","))
