@@ -27,5 +27,10 @@ export default {
 			}
 		},
 	},
+	watch: {
+		htmlText() {
+			this.RunScript()
+		},
+	},
 }
 </script>
