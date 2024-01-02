@@ -39,11 +39,31 @@
 				<LdaTopicViewer :htmlText="dataThis['lda_html_global']" />
 			</details>
 
+			<details>
+				<summary>Counting</summary>
+				<LdaViewer :dataframe="dataThis['lda_counter_global']" />
+			</details>
+
+			<details>
+				<summary>sum</summary>
+				<LdaViewer :dataframe="dataThis['lda_summer_global']" />
+			</details>
+
 			<h4>Against KPOP population</h4>
 
 			<details>
 				<summary>topics</summary>
 				<LdaTopicViewer :htmlText="dataThis['lda_html_kpop']" />
+			</details>
+
+			<details>
+				<summary>Counting</summary>
+				<LdaViewer :dataframe="dataThis['lda_counter_kpop']" />
+			</details>
+
+			<details>
+				<summary>sum</summary>
+				<LdaViewer :dataframe="dataThis['lda_summer_kpop']" />
 			</details>
 		</details>
 	</div>
@@ -62,6 +82,9 @@ export default {
 		),
 		LdaTopicViewer: Vue.defineAsyncComponent(() =>
 			loadModule("src/components/LdaTopicViewer.vue", options),
+		),
+		LdaViewer: Vue.defineAsyncComponent(() =>
+			loadModule("src/components/LdaViewer.vue", options),
 		),
 	},
 	computed: {
