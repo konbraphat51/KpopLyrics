@@ -10,20 +10,22 @@ export default {
 	},
 	data() {
 		return {
-			componentID: MakeID(6)
+			componentID: MakeID(6),
 		}
 	},
+	mounted() {
+		this.RunScript()
+	},
 	methods: {
-		RunScript(){
-			const component = document.getElementByID(this.componentID)
+		RunScript() {
+			const component = document.getElementById(this.componentID)
 			const scripts = component.getElementsByTagName("script")
 			for (let i = 0; i < scripts.length; i++) {
-    const script = document.createElement('script');
-    script.textContent = scripts[i].textContent;
-    document.body.appendChild(script);
-  }
-			alert("1")
-}
-		}
+				const script = document.createElement("script")
+				script.textContent = scripts[i].textContent
+				document.body.appendChild(script)
+			}
+		},
+	},
 }
 </script>
