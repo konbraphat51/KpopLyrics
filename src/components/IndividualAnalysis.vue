@@ -38,6 +38,13 @@
 				<summary>topics</summary>
 				<LdaTopicViewer :htmlText="dataThis['lda_html_global']" />
 			</details>
+
+			<h4>Against KPOP population</h4>
+
+			<details>
+				<summary>topics</summary>
+				<LdaTopicViewer :htmlText="dataThis['lda_html_kpop']" />
+			</details>
 		</details>
 	</div>
 </template>
