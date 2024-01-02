@@ -70,14 +70,20 @@
 		<details>
 			<summary>NRC Emotion Score</summary>
 
-			<h5>Noramlized mean emotion score</h5>
-			<EmotionTable :vector="dataThis['normalized_mean_emotion_target']" />
+			<details>
+				<summary>Noramlized mean emotion score</summary>
+				<EmotionTable :vector="dataThis['normalized_mean_emotion_target']" />
+			</details>
 
-			<h5>Ratio against global population (%)</h5>
-			<EmotionTable :vector="dataThis['emotion_percentage_global']" />
+			<details>
+				<summary>Ratio against global population (%)</summary>
+				<EmotionTable :vector="dataThis['emotion_percentage_global']" />
+			</details>
 
-			<h5>Ratio against KPOP population (%)</h5>
-			<EmotionTable :vector="dataThis['emotion_percentage_kpop']" />
+			<details>
+				<summary>Ratio against KPOP population (%)</summary>
+				<EmotionTable :vector="dataThis['emotion_percentage_kpop']" />
+			</details>
 		</details>
 	</div>
 </template>
