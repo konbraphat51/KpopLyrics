@@ -1,6 +1,7 @@
 <template>
 	<div id="app">
 		<Header />
+		<MethodsDescription />
 		<DataDescription :data="data" :playlists="playlists" :groups="groups" />
 		<h2>IndividualAnalysis</h2>
 		<IndividualAnalysis
@@ -22,6 +23,9 @@ export default Vue.defineComponent({
 		),
 		Footer: Vue.defineAsyncComponent(() =>
 			loadModule("src/components/Footer.vue", options),
+		),
+		MethodsDescription: Vue.defineAsyncComponent(() =>
+			loadModule("src/components/MethodsDescription.vue", options),
 		),
 		DataDescription: Vue.defineAsyncComponent(() =>
 			loadModule("src/components/DataDescription.vue", options),
