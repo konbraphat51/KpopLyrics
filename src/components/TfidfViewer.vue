@@ -26,7 +26,7 @@ export default {
 			this.dataframe.forEach((element) => {
 				output.push({
 					word: element[0],
-					count: element[1],
+					score: element[1],
 				})
 			})
 
@@ -42,7 +42,7 @@ export default {
 				paginationSize: 10,
 				columns: [
 					{title: "word", field: "word"},
-					{title: "count", field: "count"},
+					{title: "score", field: "score"},
 				],
 			})
 		},
