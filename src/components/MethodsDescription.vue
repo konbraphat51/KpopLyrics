@@ -1,7 +1,7 @@
 <template>
 	<div id="MethodsDescription">
 		<details>
-			<summary>Methods Description</summary>
+			<summary id="MethodsDescriptionHeader">Methods Description</summary>
 			<p>
 				<h3>TFIDF</h3>
 				TFIDF indicates how important a word is to a document in a corpus.<br />
@@ -58,3 +58,19 @@
 		</details>
 	</div>
 </template>
+
+<style>
+#MethodsDescription {
+	background-color: rgb(152, 193, 253);
+	left: 5%;
+	top: 0;
+	width: 80%;
+	border-radius: 10px;
+	margin: 10px;
+}
+
+#MethodsDescriptionHeader {
+	font-size: 1.5em;
+	font-weight: bold;
+}
+</style>
