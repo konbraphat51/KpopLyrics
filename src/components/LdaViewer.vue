@@ -25,7 +25,7 @@ export default {
 
 			this.dataframe.forEach((element) => {
 				output.push({
-					word: element[0],
+					groupNumber: element[0],
 					score: element[1],
 					topic: this.MakeTopicName(element[2]),
 				})
@@ -42,7 +42,7 @@ export default {
 				pagination: "local",
 				paginationSize: 10,
 				columns: [
-					{title: "word", field: "word"},
+					{title: "groupNumber", field: "groupNumber"},
 					{title: "score", field: "score"},
 					{title: "topic", field: "topic"},
 				],
