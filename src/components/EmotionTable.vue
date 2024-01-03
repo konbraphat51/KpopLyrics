@@ -1,5 +1,5 @@
 <template>
-	<table>
+	<table class="EmotionTable">
 		<tr>
 			<td>Emotion</td>
 			<td>Score</td>
@@ -46,3 +46,9 @@ export default {
 	},
 }
 </script>
+
+<style>
+#EmotionTable {
+	border-collapse: collapse;
+}
+</style>
