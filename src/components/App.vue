@@ -88,4 +88,8 @@ export default Vue.defineComponent({
 	font-weight: bold;
 	font-size: 26px;
 }
+
+#app {
+	font: 1rem sans-serif;
+}
 </style>
