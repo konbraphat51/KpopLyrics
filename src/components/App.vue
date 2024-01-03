@@ -80,4 +80,12 @@ export default Vue.defineComponent({
 	justify-content: center;
 	align-items: center;
 }
+
+#app h2 {
+	padding: 0.1rem 0rem;
+	margin-bottom: 0.2rem;
+	border-bottom: 1px solid #000000;
+	font-weight: bold;
+	font-size: 26px;
+}
 </style>
