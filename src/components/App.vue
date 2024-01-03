@@ -108,12 +108,6 @@ export default Vue.defineComponent({
 	margin: 10px;
 }
 
-@media (min-width: 800px) {
-	.IndividualAnalysis {
-		width: 45%;
-	}
-}
-
 .IndividualAnalysis:nth-child(odd) {
 	background-color: rgb(253, 227, 227);
 }
