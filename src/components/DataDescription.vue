@@ -72,3 +72,24 @@ export default {
 	},
 }
 </script>
+
+<style>
+#DataDescription {
+	background-color: rgb(110, 139, 182);
+	left: 5%;
+	top: 0;
+	width: 80%;
+	border-radius: 10px;
+	margin: 10px;
+}
+
+#DataDescription table {
+	border-collapse: collapse;
+}
+
+#DataDescription table,
+th,
+td {
+	border: 1px solid black;
+}
+</style>
