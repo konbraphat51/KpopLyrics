@@ -5,12 +5,14 @@
 		<MethodsDescription />
 		<DataDescription :data="data" :playlists="playlists" :groups="groups" />
 		<h2>IndividualAnalysis</h2>
-		<IndividualAnalysis
-			v-for="group in groups"
-			:key="group"
-			:target="group"
-			:data="data"
-		/>
+		<div id="individuals">
+			<IndividualAnalysis
+				v-for="group in groups"
+				:key="group"
+				:target="group"
+				:data="data"
+			/>
+		</div>
 		<Footer />
 	</div>
 </template>
@@ -91,5 +93,32 @@ export default Vue.defineComponent({
 
 #app {
 	font: 1rem sans-serif;
+}
+
+#individuals {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.IndividualAnalysis {
+	left: 5%;
+	top: 0;
+	width: 100%;
+	border-radius: 10px;
+	margin: 10px;
+}
+
+@media (min-width: 800px) {
+	.IndividualAnalysis {
+		width: 45%;
+	}
+}
+
+.IndividualAnalysis:nth-child(odd) {
+	background-color: rgb(253, 227, 227);
+}
+
+.IndividualAnalysis:nth-child(even) {
+	background-color: rgb(227, 227, 253);
 }
 </style>
