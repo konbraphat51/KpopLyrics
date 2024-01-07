@@ -25,6 +25,8 @@ export default {
 				"disgust",
 				"fear",
 				"joy",
+				"negative",
+				"positive",
 				"sadness",
 				"surprise",
 				"trust",
@@ -48,7 +50,7 @@ export default {
 </script>
 
 <style>
-#EmotionTable {
+#EmotionTable table {
 	border-collapse: collapse;
 }
 </style>
