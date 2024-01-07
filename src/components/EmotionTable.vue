@@ -48,7 +48,7 @@ export default {
 </script>
 
 <style>
-#EmotionTable {
+#EmotionTable table {
 	border-collapse: collapse;
 }
 </style>
