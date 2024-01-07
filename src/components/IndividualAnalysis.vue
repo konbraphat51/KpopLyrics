@@ -85,6 +85,27 @@
 				<EmotionTable :vector="dataThis['emotion_percentage_kpop']" />
 			</details>
 		</details>
+
+		<details>
+			<summary>NRC Sentiment Score</summary>
+
+			<details>
+				<summary>Noramlized mean sentiment score</summary>
+				<SentimentTable
+					:vector="dataThis['normalized_mean_sentiment_target']"
+				/>
+			</details>
+
+			<details>
+				<summary>Ratio against global population (%)</summary>
+				<SentimentTable :vector="dataThis['sentiment_percentage_global']" />
+			</details>
+
+			<details>
+				<summary>Ratio against KPOP population (%)</summary>
+				<SentimentTable :vector="dataThis['sentiment_percentage_kpop']" />
+			</details>
+		</details>
 	</div>
 </template>
 
@@ -107,6 +128,9 @@ export default {
 		),
 		EmotionTable: Vue.defineAsyncComponent(() =>
 			loadModule("src/components/EmotionTable.vue", options),
+		),
+		SentimentTable: Vue.defineAsyncComponent(() =>
+			loadModule("src/components/SentimentTable.vue", options),
 		),
 	},
 	computed: {
