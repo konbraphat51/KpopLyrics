@@ -25,8 +25,6 @@ export default {
 				"disgust",
 				"fear",
 				"joy",
-				"negative",
-				"positive",
 				"sadness",
 				"surprise",
 				"trust",
